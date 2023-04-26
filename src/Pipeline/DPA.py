@@ -443,7 +443,7 @@ class DensityPeakAdvanced(ClusterMixin, BaseEstimator):
             if x+"_" in self.__dict__:
                 params[x] = self.__dict__[x+"_"]
         return params
-    def get_dendrogram(self):
+    def get_dendrogram(self, filename=None):
 # Generation of SL dendrogram
 # Prepare some auxiliary lists
         e1=[]
@@ -579,4 +579,6 @@ class DensityPeakAdvanced(ClusterMixin, BaseEstimator):
             if (luma<156):
                     cc='w'
             plt.annotate(labels[i],(xs[i],ys[i]),horizontalalignment='center',verticalalignment='center',zorder=zorder,c=cc,weight='bold')
+        if filename:
+            plt.savefig(f"{filename}.png", format="png")
         plt.show()
