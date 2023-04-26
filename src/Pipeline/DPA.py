@@ -580,5 +580,5 @@ class DensityPeakAdvanced(ClusterMixin, BaseEstimator):
                     cc='w'
             plt.annotate(labels[i],(xs[i],ys[i]),horizontalalignment='center',verticalalignment='center',zorder=zorder,c=cc,weight='bold')
         if filename:
-            plt.savefig(f"{filename}.png", format="png")
+            plt.savefig(f"{filename}.png", format="png", dpi=500)
         plt.show()
